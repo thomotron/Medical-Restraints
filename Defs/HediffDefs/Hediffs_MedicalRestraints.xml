@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef Name="ImplantHediffBase" Abstract="True">
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.9, 0.6, 0.3)</defaultLabelColor>
+  </HediffDef>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>MedicallyRestrained</defName>
+    <label>medical restraints</label>
+    <maxSeverity>1.0</maxSeverity>
+    <comps></comps>
+    <stages>
+      <li>
+        <painFactor>0</painFactor>
+        <capMods>
+            <li>
+               <capacity>Moving</capacity>
+               <offset>-1</offset>
+            </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+
+</Defs>

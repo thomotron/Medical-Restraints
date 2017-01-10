@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RecipeDefs>
+    <RecipeDef Abstract="True" Name="SurgeryRestraints">
+        <effectWorking>Tailor</effectWorking>
+        <soundWorking>Recipe_Tailor</soundWorking>
+        <workSpeedStat>MedicalOperationSpeed</workSpeedStat>
+        <workSkill>Medicine</workSkill>
+        <workSkillLearnFactor>16</workSkillLearnFactor>
+        <surgeonSurgerySuccessChanceExponent>0</surgeonSurgerySuccessChanceExponent>          
+        <roomSurgerySuccessChanceFactorExponent>0</roomSurgerySuccessChanceFactorExponent>
+        <surgerySuccessChanceFactor>1</surgerySuccessChanceFactor>
+        <deathOnFailedSurgeryChance>0</deathOnFailedSurgeryChance>
+        <workAmount>2000</workAmount>
+        <recipeUsers>
+            <li>Human</li>
+        </recipeUsers>
+        <skillRequirements>
+            <li>
+                <skill>Medicine</skill>
+                <minlevel>0</minlevel>
+            </li>
+        </skillRequirements>
+    </RecipeDef>
+
+    <RecipeDef ParentName="SurgeryRestraints">
+        <defName>ApplyRestraints</defName>
+        <label>apply restraints</label>
+        <description>Restrain the patient</description>
+        <workerClass>Recipe_InstallImplant</workerClass>
+        <jobString>Restraining patient.</jobString>
+        <appliedOnFixedBodyParts>
+            <li>Torso</li>
+        </appliedOnFixedBodyParts>
+        <addsHediff>MedicallyRestrained</addsHediff>
+    </RecipeDef>
+
+    <RecipeDef ParentName="SurgeryRestraints">
+        <defName>RemoveRestraints</defName>
+        <label>remove restraints</label>
+        <description>Release the patient</description>
+        <workerClass>Recipe_RemoveHediff</workerClass>
+        <jobString>Releasing patient.</jobString>
+		<removesHediff>MedicallyRestrained</removesHediff>
+        <successfullyRemovedHediffMessage></successfullyRemovedHediffMessage>
+    </RecipeDef>
+</RecipeDefs>
